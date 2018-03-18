@@ -5,6 +5,7 @@
         <icon class="list__icon" :name="index >= rating ? 'star-o' : 'star'"></icon>
       </li>
     </ul>
+    <span>{{ getStarCount }}</span>
   </div>
 </template>
 
@@ -32,6 +33,11 @@
       },
       onMouseLeave: function() {
         this.rating = this.initialRating;
+      }
+    },
+    computed: {
+      getStarCount() {
+        return `${this.initialRating} of ${this.maxRating}`
       }
     }
   }
