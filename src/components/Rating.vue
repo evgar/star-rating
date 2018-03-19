@@ -24,12 +24,12 @@
     components: { Icon },
     methods: {
       onClick: function(index) {
-        this.rating = index + 1;
+        this.rating = this.rating === index + 1 ? this.rating - 1 : index + 1;
       }
     },
     computed: {
       getStarCount() {
-        return `${this.initialRating} of ${this.maxRating}`
+        return `${this.rating} of ${this.maxRating}`
       }
     }
   }
