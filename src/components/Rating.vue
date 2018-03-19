@@ -15,10 +15,20 @@
   import 'vue-awesome/icons/star-o'
 
   export default {
+    props: {
+      grade: {
+        type: Number,
+        required: true
+      },
+      maxGrade: {
+        type: Number,
+        required: true
+      }
+    },
     data() {
       return {
-        rating: 0,
-        maxRating: 5
+        rating: this.grade,
+        maxRating: this.maxGrade
       }
     },
     components: { Icon },
