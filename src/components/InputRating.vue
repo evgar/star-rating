@@ -1,11 +1,34 @@
 <template>
   <div class="input">
-    <input class="input__range" type="range" min="0" max="5" step="1">
+    <input class="input__range" type="range" min="1" :max="maxGrade" step="1" @change="onChange">
+    <span>{{ rating }}</span>
   </div>
 </template>
 
 <script>
+  export default  {
+    props: {
+      max: {
+        type: Number,
+      },
+      grade: {
 
+      }
+    },
+    data() {
+      return {
+        maxGrade: this.max,
+        rating: this.grade
+
+      }
+    },
+    methods: {
+      onChange: function(event) {
+        console.log(event);
+        this.rating = event.target.value;
+      }
+    }
+  }
 </script>
 
 <style scoped>

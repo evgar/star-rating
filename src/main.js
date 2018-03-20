@@ -12,6 +12,6 @@ new Vue({
 new Vue({
   el: "#inputRating",
   components: { inputRating },
-  template: '<input-rating/>'
+  template: '<input-rating :max="5"/>'
 });
 
