@@ -1,7 +1,8 @@
 <template>
   <div class="rating">
     <ul class="rating__list">
-      <li class="list__item" :class="index < rating ? 'active' : '' "  v-for="(rate, index) in maxRating" @click="onClick(index)">
+      <li class="list__item" :class="index < rating ? 'active' : '' " v-for="(rate, index) in maxRating"
+          @click="onClick(index)">
         <icon class="list__icon" :name="index >= rating ? 'star-o' : 'star'"></icon>
       </li>
     </ul>
@@ -31,9 +32,9 @@
         maxRating: this.maxGrade
       }
     },
-    components: { Icon },
+    components: {Icon},
     methods: {
-      onClick: function(index) {
+      onClick: function (index) {
         this.rating = this.rating === index + 1 ? this.rating - 1 : index + 1;
       }
     },
@@ -51,9 +52,11 @@
     list-style: none;
     color: #a7a8a8;
   }
-  .rating__list:hover .list__item{
+
+  .rating__list:hover .list__item {
     color: #f3d23e;
   }
+
   .list__item:hover ~ .list__item:not(.active) {
     color: inherit;
   }
@@ -63,6 +66,7 @@
     cursor: pointer;
 
   }
+
   .active {
     color: #f3d23e;
   }

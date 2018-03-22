@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
   export default  {
     props: {
       max: {
@@ -19,7 +20,6 @@
       return {
         maxGrade: this.max,
         rating: this.grade
-
       }
     },
     methods: {
