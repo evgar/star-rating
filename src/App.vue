@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <StarRating :grade="0" :maxGrade="5"></StarRating>
-    <InputRating :max="5"></InputRating>
+    <StarRating :grade="grade" :maxGrade="5" v-on:setRating="setGrade"></StarRating>
+    <InputRating :grade="grade" :max="5"></InputRating>
   </div>
 </template>
 
@@ -16,7 +16,14 @@ export default {
     components: {StarRating, InputRating},
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        grade: 0
+      }
+    },
+    methods: {
+      setGrade: function (grade) {
+        this.grade = grade;
+        console.log(grade);
       }
     }
   }

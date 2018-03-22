@@ -34,8 +34,9 @@
     },
     components: {Icon},
     methods: {
-      onClick: function (index) {
+      onClick(index) {
         this.rating = this.rating === index + 1 ? this.rating - 1 : index + 1;
+          this.$emit('setRating', this.rating);
       }
     },
     computed: {
