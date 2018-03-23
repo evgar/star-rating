@@ -1,6 +1,6 @@
 <template>
   <div class="input">
-    <input class="input__range" type="range" min="1" :max="maxGrade" step="1"  :value="grade">
+    <input class="input__range" type="range" min="1" :max="maxGrade" step="1"  :value="grade" @change="onChange">
     <span>{{ grade }}</span>
   </div>
 </template>
@@ -24,8 +24,8 @@
     },
     methods: {
       onChange: function(event) {
-//        console.log(event);
-//        this.rating = event.target.value;
+       this.rating = +event.target.value;
+       this.$emit('setRating', this.rating);
       }
     }
   }

@@ -1,9 +1,9 @@
 <template>
   <div class="rating">
     <ul class="rating__list">
-      <li class="list__item" :class="index < rating ? 'active' : '' " v-for="(rate, index) in maxRating"
+      <li class="list__item" :class="index < grade ? 'active' : '' " v-for="(rate, index) in maxRating"
           @click="onClick(index)">
-        <icon class="list__icon" :name="index >= rating ? 'star-o' : 'star'"></icon>
+        <icon class="list__icon" :name="index >= grade ? 'star-o' : 'star'"></icon>
       </li>
     </ul>
     <span>{{ getStarCount }}</span>
