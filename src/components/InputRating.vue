@@ -8,12 +8,15 @@
 <script>
 
   export default  {
+    name: 'v-input-rating',
     props: {
       max: {
         type: Number,
+        default: 5
       },
       grade: {
         type: Number,
+        default: 0
       }
     },
     data() {

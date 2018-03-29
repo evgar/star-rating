@@ -2,7 +2,7 @@
   <div class="rating">
     <ul class="rating__list">
       <li class="list__item" :class="index < grade ? 'active' : '' " v-for="(rate, index) in maxRating"
-          @click="onClick(index)">
+          @click="setRating(index)">
         <icon class="list__icon" :name="index >= grade ? 'star-o' : 'star'"></icon>
       </li>
     </ul>
@@ -16,14 +16,18 @@
   import 'vue-awesome/icons/star-o'
 
   export default {
+    name: 'sadas',
+    components: {
+      Icon
+    },
     props: {
       grade: {
         type: Number,
-        required: true
+        default: 0
       },
       maxGrade: {
         type: Number,
-        required: true
+        default: 5
       }
     },
     data() {
@@ -32,11 +36,11 @@
         maxRating: this.maxGrade
       }
     },
-    components: {Icon},
+
     methods: {
-      onClick(index) {
+      setRating(index) {
         this.rating = this.rating === index + 1 ? this.rating - 1 : index + 1;
-          this.$emit('setRating', this.rating);
+        this.$emit('changed', this.rating);
       }
     },
     computed: {
@@ -48,7 +52,7 @@
 </script>
 
 <style scoped>
-  .rating__list {
+  .rating-list {
     display: flex;
     list-style: none;
     color: #a7a8a8;

@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <StarRating :grade="grade" :maxGrade="5" v-on:setRating="setGrade"></StarRating>
-    <InputRating :grade="grade" :max="5" v-on:setRating="setGrade"></InputRating>
+    <StarRating :grade="grade" @changed="setGrade"></StarRating>
+    <v-input-rating :grade="grade" @setRating="setGrade" @click.native=""></v-input-rating>
   </div>
 </template>
 
 <script>
   import Vue from 'vue';
   import StarRating from './components/StarRating.vue'
-  import InputRating from './components/InputRating.vue'
+  import vInputRating from './components/InputRating.vue'
 
 
 export default {
