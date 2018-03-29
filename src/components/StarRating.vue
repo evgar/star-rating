@@ -1,9 +1,9 @@
 <template>
   <div class="rating">
-    <ul class="rating__list">
-      <li class="list__item" :class="index < grade ? 'active' : '' " v-for="(rate, index) in maxRating"
+    <ul class="rating-list">
+      <li class="list-item" :class="index < grade ? 'active' : '' " v-for="(rate, index) in maxRating"
           @click="setRating(index)">
-        <icon class="list__icon" :name="index >= grade ? 'star-o' : 'star'"></icon>
+        <icon class="list-icon" :name="index >= grade ? 'star-o' : 'star'"></icon>
       </li>
     </ul>
     <span>{{ getStarCount }}</span>
@@ -16,7 +16,7 @@
   import 'vue-awesome/icons/star-o'
 
   export default {
-    name: 'sadas',
+    name: 'v-star-rating',
     components: {
       Icon
     },
@@ -58,18 +58,17 @@
     color: #a7a8a8;
   }
 
-  .rating__list:hover .list__item {
+  .rating-list:hover .list-item {
     color: #f3d23e;
   }
 
-  .list__item:hover ~ .list__item:not(.active) {
+  .list-item:hover ~ .list-item:not(.active) {
     color: inherit;
   }
 
-  .list__item {
+  .list-item {
     padding-right: 15px;
     cursor: pointer;
-
   }
 
   .active {

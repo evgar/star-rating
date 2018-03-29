@@ -1,6 +1,6 @@
 <template>
   <div class="input">
-    <input class="input__range" type="range" min="1" :max="maxGrade" step="1"  :value="grade" @change="onChange">
+    <input class="input-range" type="range" min="1" :max="maxGrade" step="1"  :value="grade" @change="onChange">
     <span>{{ grade }}</span>
   </div>
 </template>
@@ -36,15 +36,15 @@
 
 <style scoped>
 
-  .input__range {
+  .input-range {
     -webkit-appearance: none;
     width: 20%;
     margin: 7.3px 0;
   }
-  .input__range:focus {
+  .input-range:focus {
     outline: none;
   }
-  .input__range::-webkit-slider-runnable-track {
+  .input-range::-webkit-slider-runnable-track {
     width: 100%;
     height: 11.4px;
     cursor: pointer;
@@ -53,7 +53,7 @@
     border-radius: 1.3px;
     border: 0.2px solid #010101;
   }
-  .input__range::-webkit-slider-thumb {
+  .input-range::-webkit-slider-thumb {
     box-shadow: 0.9px 0.9px 1px #000031, 0px 0px 0.9px #00004b;
     border: 1.8px solid #00001e;
     height: 26px;
@@ -64,10 +64,10 @@
     -webkit-appearance: none;
     margin-top: -7.5px;
   }
-  .input__range:focus::-webkit-slider-runnable-track {
+  .input-range:focus::-webkit-slider-runnable-track {
     background: #f3d23e;
   }
-  .input__range::-moz-range-track {
+  .input-range::-moz-range-track {
     width: 100%;
     height: 11.4px;
     cursor: pointer;
@@ -76,7 +76,7 @@
     border-radius: 1.3px;
     border: 0.2px solid #010101;
   }
-  .input__range::-moz-range-thumb {
+  .input-range::-moz-range-thumb {
     box-shadow: 0.9px 0.9px 1px #000031, 0px 0px 0.9px #00004b;
     border: 1.8px solid #00001e;
     height: 26px;
@@ -85,7 +85,7 @@
     background: #ffffff;
     cursor: pointer;
   }
-  .input__range::-ms-track {
+  .input-range::-ms-track {
     width: 100%;
     height: 11.4px;
     cursor: pointer;
@@ -93,19 +93,19 @@
     border-color: transparent;
     color: transparent;
   }
-  .input__range::-ms-fill-lower {
+  .input-range::-ms-fill-lower {
     background: rgba(42, 100, 149, 0.78);
     border: 0.2px solid #010101;
     border-radius: 2.6px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
-  .input__range::-ms-fill-upper {
+  .input-range::-ms-fill-upper {
     background: rgba(48, 113, 169, 0.78);
     border: 0.2px solid #010101;
     border-radius: 2.6px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
-  .input__range::-ms-thumb {
+  .input-range::-ms-thumb {
     box-shadow: 0.9px 0.9px 1px #000031, 0px 0px 0.9px #00004b;
     border: 1.8px solid #00001e;
     height: 26px;
@@ -115,10 +115,10 @@
     cursor: pointer;
     height: 11.4px;
   }
-  .input__range:focus::-ms-fill-lower {
+  .input-range:focus::-ms-fill-lower {
     background: rgba(48, 113, 169, 0.78);
   }
-  .input__range:focus::-ms-fill-upper {
+  .input-range:focus::-ms-fill-upper {
     background: rgba(54, 126, 189, 0.78);
   }
 </style>
